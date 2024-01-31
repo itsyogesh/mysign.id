@@ -9,7 +9,6 @@ pub mod mysign {
         traits::{Storage, String},
     };
 
-    #[ink(storage)]
     #[derive(Default, Storage)]
     pub struct Mysign {
         #[storage_field]
@@ -23,7 +22,6 @@ pub mod mysign {
     impl PSP34 for Mysign {}
     impl Ownable for Mysign {}
     impl PSP34Mintable for Mysign {
-        #[ink(message)]
         #[openbrush::modifiers(only_owner)]
         fn mint(&mut self, account: AccountId, id: Id) -> Result<(), PSP34Error> {
             self._mint_to(account, id)
@@ -33,7 +31,6 @@ pub mod mysign {
     impl PSP34Metadata for Mysign {}
 
     impl Mysign {
-        #[ink(constructor)]
         pub fn new() -> Self {
             let mut instance = Self::default();
             instance._init_with_owner(instance.env().caller());
@@ -47,7 +44,6 @@ pub mod mysign {
             instance
         }
 
-        #[ink(message, payable)]
         pub fn mint(
             &mut self,
             account: AccountId,

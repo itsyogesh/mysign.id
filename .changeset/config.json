@@ -4,7 +4,7 @@
   "commit": false,
   "fixed": [],
   "privatePackages": { "version": true, "tag": true },
-  "linked": [["@inkathon/*"]],
+  "linked": [["@mysign/*"]],
   "baseBranch": "main",
   "updateInternalDependencies": "patch"
 }
