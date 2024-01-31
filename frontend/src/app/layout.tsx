@@ -9,6 +9,7 @@ import { GeistSans } from 'geist/font/sans'
 import { ToastConfig } from '@/app/toast-config'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { env } from '@/config/environment'
+import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
 
 import './globals.css'
@@ -25,28 +26,34 @@ const fontHeading = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'ink!athon Boilerplate',
-  description: 'Full-Stack DApp Boilerplate for ink! Smart Contracts',
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
   metadataBase: new URL(env.url),
   robots: env.isProduction ? 'all' : 'noindex,nofollow',
   openGraph: {
     type: 'website',
-    locale: 'en',
-    url: env.url,
-    siteName: 'ink!athon Boilerplate',
-    images: [
-      {
-        url: '/images/inkathon-og-banner.jpg',
-        width: 1280,
-        height: 640,
-      },
-    ],
+    locale: 'en_US',
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
   },
   twitter: {
-    site: '@scio_xyz',
-    creator: '@scio_xyz',
     card: 'summary_large_image',
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+    creator: '@itsyogesh18',
   },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: `${new URL(env.url)}/site.webmanifest`,
 }
 
 export default function RootLayout({ children }: PropsWithChildren) {

@@ -5,15 +5,15 @@ import { env } from '@/config/environment'
 const site_url = env.url
 
 export const siteConfig: SiteConfig = {
-  name: 'Mysign',
+  name: 'Mysign.id',
   description:
-    'Discover hassle-free domain management with The Domain Collective: - a single, intuitive platform to manage, track, and secure your domain names from various registrars with ease.',
+    'A new era of digital signatures - secure, verified, and uniquely yours. Sign anywhere with your "real" signature, powered by ML, NFT and Aleph Zero',
   url: site_url,
-  keywords: ['domain collective', 'domain management'],
+  keywords: ['digital signatures', 'NFT signatures'],
   ogImage: `${site_url}/og.jpg`,
   links: {
-    twitter: 'https://twitter.com/collective.domains',
-    github: 'https://github.com/droidsize',
+    twitter: 'https://twitter.com/itsyogesh18',
+    github: 'https://github.com/itsyogesh',
   },
-  mailSupport: 'support@collective.domains',
+  mailSupport: 'support@mysign.id',
 }

@@ -15,7 +15,7 @@ export default async function MarketingLayout({ children }: MarketingLayoutProps
         <NavBar items={marketingConfig.mainNav} scroll={true} />
       </Suspense>
       <main className="flex-1">{children}</main>
-      <SiteFooter />
+      <SiteFooter className="border-t border-muted-foreground/10" />
     </div>
   )
 }

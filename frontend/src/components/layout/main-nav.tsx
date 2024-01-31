@@ -42,7 +42,7 @@ export function MainNav({ items, children }: MainNavProps) {
   return (
     <div className="flex gap-6 md:gap-10">
       <Link href="/" className="hidden items-center space-x-2 md:flex">
-        <Image src="/logo.svg" width={32} height={32} alt="Logo" />
+        <Icons.logo className="size-8" />
         <span className="tracking-sm hidden font-heading text-xl font-bold sm:inline-block">
           {siteConfig.name}
         </span>
@@ -54,7 +54,7 @@ export function MainNav({ items, children }: MainNavProps) {
               key={index}
               href={item.disabled ? '#' : item.href}
               className={cn(
-                'mt-1.5 flex items-center font-heading text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm',
+                'mt-1.5 flex items-center font-heading text-xl font-semibold transition-colors hover:text-foreground/80 sm:text-sm',
                 item.href.startsWith(`/${segment}`) ? 'text-foreground' : 'text-foreground/60',
                 item.disabled && 'cursor-not-allowed opacity-80',
               )}
