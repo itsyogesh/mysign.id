@@ -7,7 +7,7 @@ import telegramIcon from 'public/icons/telegram-button.svg'
 import vercelIcon from 'public/icons/vercel-button.svg'
 import inkathonLogo from 'public/images/inkathon-logo.png'
 
-import { cn } from '@/utils/cn'
+import { cn } from '@/lib/utils'
 
 interface StyledIconLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string

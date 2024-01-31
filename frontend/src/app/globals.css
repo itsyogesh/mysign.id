@@ -31,14 +31,13 @@
     --border: 220 13% 91%;
     --input: 220 13% 91%;
     --ring: 262.1 83.3% 57.8%;
-
-    --radius: 0.75rem;
+    --radius: 1rem;
   }
 
   .dark {
     --background: 224 71.4% 4.1%;
-
     --foreground: 210 20% 98%;
+
     --card: 224 71.4% 4.1%;
     --card-foreground: 210 20% 98%;
 
@@ -74,7 +73,16 @@
     @apply scroll-smooth antialiased;
   }
   body {
-    @apply bg-background font-sans text-foreground;
-    @apply flex h-screen min-h-screen flex-col;
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
   }
+}
+
+.text-gradient_indigo-purple {
+  background: linear-gradient(90deg, #6366f1 0%, rgb(168 85 247 / 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

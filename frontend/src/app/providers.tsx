@@ -4,13 +4,15 @@ import { PropsWithChildren } from 'react'
 
 import { getDeployments } from '@/deployments/deployments'
 import { UseInkathonProvider } from '@scio-labs/use-inkathon'
+import { ThemeProvider as NextThemesProvider } from 'next-themes'
+import { ThemeProviderProps } from 'next-themes/dist/types'
 
 import { env } from '@/config/environment'
 
-export default function ClientProviders({ children }: PropsWithChildren) {
+export function ClientProviders({ children }: PropsWithChildren) {
   return (
     <UseInkathonProvider
-      appName="ink!athon" // TODO
+      appName="mysign.id"
       connectOnInit={true}
       defaultChain={env.defaultChain}
       deployments={getDeployments()}
@@ -18,4 +20,8 @@ export default function ClientProviders({ children }: PropsWithChildren) {
       {children}
     </UseInkathonProvider>
   )
+}
+
+export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
 }

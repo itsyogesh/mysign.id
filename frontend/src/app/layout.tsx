@@ -1,4 +1,5 @@
 import { Metadata, Viewport } from 'next'
+import { DM_Sans } from 'next/font/google'
 import { PropsWithChildren } from 'react'
 
 import { Analytics } from '@vercel/analytics/react'
@@ -8,15 +9,20 @@ import { GeistSans } from 'geist/font/sans'
 import { ToastConfig } from '@/app/toast-config'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { env } from '@/config/environment'
-import { cn } from '@/utils/cn'
+import { cn } from '@/lib/utils'
 
 import './globals.css'
-import ClientProviders from './providers'
+import { ClientProviders, ThemeProvider } from './providers'
 
 export const viewport: Viewport = {
   themeColor: '#000000',
   colorScheme: 'dark',
 }
+
+const fontHeading = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-heading',
+})
 
 export const metadata: Metadata = {
   title: 'ink!athon Boilerplate',
@@ -45,14 +51,28 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en" className={cn('dark', GeistSans.variable, GeistMono.variable)}>
-      <body>
-        <ClientProviders>
-          <TooltipProvider>{children}</TooltipProvider>
-          <ToastConfig />
-        </ClientProviders>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          'min-h-screen bg-background font-sans antialiased',
+          GeistSans.variable,
+          GeistMono.variable,
+          fontHeading.variable,
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ClientProviders>
+            <TooltipProvider>{children}</TooltipProvider>
+            <ToastConfig />
+          </ClientProviders>
 
-        {!!env.isProduction && <Analytics />}
+          {!!env.isProduction && <Analytics />}
+        </ThemeProvider>
       </body>
     </html>
   )

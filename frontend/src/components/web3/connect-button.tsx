@@ -74,7 +74,7 @@ export const ConnectButton: FC<ConnectButtonProps> = () => {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
-            className="h-12 min-w-[14rem] gap-2 rounded-2xl border border-white/10 bg-primary px-4 py-3 font-bold text-foreground"
+            className="h-12 min-w-[14rem] gap-2 rounded-md border px-4 py-3 font-heading font-bold"
             isLoading={isConnecting}
             disabled={isConnecting}
             translate="no"
@@ -117,10 +117,7 @@ export const ConnectButton: FC<ConnectButtonProps> = () => {
     <div className="flex select-none flex-wrap items-stretch justify-center gap-4">
       {/* Account Name, Address, and AZERO.ID-Domain (if assigned) */}
       <DropdownMenu>
-        <DropdownMenuTrigger
-          asChild
-          className="rounded-2xl bg-gray-900 px-4 py-6 font-bold text-foreground"
-        >
+        <DropdownMenuTrigger asChild className="rounded-md px-4 py-6 font-heading font-bold">
           <Button className="min-w-[14rem] border" translate="no">
             <div className="flex items-center justify-between gap-2">
               <div className="flex flex-col items-center justify-center">
@@ -138,7 +135,7 @@ export const ConnectButton: FC<ConnectButtonProps> = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align="end"
-          className="no-scrollbar max-h-[40vh] min-w-[14rem] overflow-scroll rounded-2xl"
+          className="no-scrollbar max-h-[40vh] min-w-[14rem] overflow-scroll rounded-md"
         >
           {/* Supported Chains */}
           {supportedChains.map((chain) => (
@@ -201,7 +198,7 @@ export const ConnectButton: FC<ConnectButtonProps> = () => {
 
       {/* Account Balance */}
       {reducibleBalanceFormatted !== undefined && (
-        <div className="flex min-w-[10rem] items-center justify-center gap-2 rounded-2xl border bg-gray-900 px-4 py-3 font-mono text-sm font-bold text-foreground">
+        <div className="flex min-w-[8rem] items-center justify-center gap-2 rounded-md border px-3 py-3 font-heading text-sm font-bold">
           {reducibleBalanceFormatted}
           {(!reducibleBalance || reducibleBalance?.isZero()) && (
             <Tooltip>
@@ -232,7 +229,7 @@ export const AccountName: FC<AccountNameProps> = ({ account, ...rest }) => {
   )
 
   return (
-    <div className="flex items-center gap-2 font-mono text-sm font-bold uppercase" {...rest}>
+    <div className="flex items-center gap-2 font-heading text-sm font-bold uppercase" {...rest}>
       {primaryDomain || account.name}
       {!!primaryDomain && <Image src={aznsIconSvg} alt="AZERO.ID Logo" width={13} height={13} />}
     </div>
