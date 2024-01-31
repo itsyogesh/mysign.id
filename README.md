@@ -1,56 +1,31 @@
-![inkathon Devtooling Banner](inkathon-devtooling-banner.png)
-
-# ink!athon Boilerplate
+## Mysign.id - A new era of digital signatures, secured, verified, and uniquely yours
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Built with ink!](https://raw.githubusercontent.com/paritytech/ink/master/.images/badge.svg)](https://use.ink)
-![Rust](https://img.shields.io/badge/Rust-000000?logo=rust&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-000000?logo=typescript&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white)
 
-This is a full-stack dApp boilerplate for ink! smart contracts with an integrated frontend. It can be used to quickly start developing your hackathon idea or to scaffold a production-ready Web3 application.
+Mysign.id is an AI and ZKP based platform transforming the way we use digital signatures. By combining the convenience of traditional wet signatures with the security and immutability of web3 technology, Mysign.id ensures that your signature is digitized, minted, and stored securely on the blockchain and is as unique and legally binding as its inked counterpart.
 
-The project is part of a [Scio Labs](https://scio.xyz) initiative to improve the developer experience in the ink! ecosystem and a proud member of the [Aleph Zero EFP](https://alephzero.org/ecosystem-funding-program). 💜
+### Key Features
 
-Other projects include:
+- **Signature Minting** - Each signature is securely minted as a unique NFT, ensuring that your signature is only accessible to you.
+- **Metadata** - Everytime you mint a signature, mysign.id will extract and store your unique signature metadata, like the shape and edges of your signature on the blockchain to provide you with a secure signature profile.
+- **Built on Aleph Zero** - Utilizing Aleph Zero and Liminal's privacy layer, Mysign.id ensures fast, private, and secure transactions.
+- **Signature Verification** - Mysign leverages zero-knowledge proofs for signature verification. Upload an image of a signature and verify its authenticity associated with a user's address or Aleph Zero ID. (Coming Soon, built on Aleph Zero Liminal)
+- **Integration with existing platforms** - Mysign.id can be integrated with existing platforms like Docusign, allowing you to sign documents with your real signature from any device using your wallet. (Coming Soon, mysign.id SDK)
 
-- `create-ink-app` CLI (_Coming soon_)
-- [`ink!athon`](https://github.com/scio-labs/inkathon) Boilerplate
-- [`useInkathon`](https://github.com/scio-labs/use-inkathon) Hooks & Utility Library
-- [`zink!`](https://github.com/scio-labs/zink) Smart Contract Macros
+### How It Works
 
-**Join the discussion in our [Telegram Group](https://t.me/inkathon)** 💬
+Mysign.id extracts distinctive properties from your signature during the minting process. These properties are securely stored as metadata along with the NFT. Using OpenCV, scikit-learn, and DIS techniques, Mysign.id can compare any uploaded signature image with the minted signature for verification, providing a proof of match or non-match.
 
-**If you want to contribute, please read our [Contributor Guidelines](https://github.com/scio-labs/inkathon/blob/main/CONTRIBUTING.md)** 🙏
+At the heart of Mysign ZKP is Liminal, Aleph Zero's multichain privacy framework.Whether it's a bank verifying a signature, a notary authenticating a document, or a fan collecting a digital autograph, Mysign ensures that the process is private, secure, and verifiable.
 
----
+### Possible Use Cases
 
-**Table of Contents:**
+- **Banking** - Mysign.id can be integrated with banks/banking entities to verify signatures on checks and other physical banking documents to prevent fraud. With Mysign.id zero-knowledge verifications the bank can verify the authenticity of a signature without having to store the signature on their servers or share it with third parties.
+- **Notary** - Mysign.id can be used by notaries to verify signatures on documents. This can be used to verify the authenticity of documents and prevent fraud.
+- **Digital Autographs** - Mysign.id can be used by celebrities and influencers to mint their signatures as NFTs and sell them to fans. Users can use the Mysign.id ZKP to verify the authenticity of the signature. (Coming Soon)
+- **Document Signing & Storage** - The next goal on the Mysign.id roadmap is to build a decentralized document signing and storage platform. Users can sign documents their personal documents with the Mysign.id signature and even do multi-party signing. The signed documents can be stored on IPFS and the signature can be verified using the Mysign.id ZKP. (Coming Soon)
 
-1. [About 📖](#about-)
-2. [Getting started 🚀](#getting-started-)
-   1. [1. Run the frontend](#1-run-the-frontend)
-   2. [2. Build \& deploy contracts on a local node](#2-build--deploy-contracts-on-a-local-node)
-   3. [3. Connect the frontend to the local node](#3-connect-the-frontend-to-the-local-node)
-3. [Customization 🎨](#customization-)
-   1. [1. Project Name](#1-project-name)
-   2. [2. Custom Contracts](#2-custom-contracts)
-   3. [3. Custom Scripts](#3-custom-scripts)
-4. [The Stack 🥞](#the-stack-)
-5. [Live Examples 🌐](#live-examples-)
-6. [Deployment 🚢](#deployment-)
-   1. [Environment Variables](#environment-variables)
-   2. [Contract Deployment](#contract-deployment)
-7. [VSCode Setup 🛠](#vscode-setup-)
-   1. [Workspace](#workspace)
-   2. [Plugins](#plugins)
-8. [FAQs \& Troubleshooting 💬](#faqs--troubleshooting-)
-
----
-
-## About 📖
-
-The boilerplate comes with a small sample ink! `Greeter` contract which stores a `message` (the "greeting") and allows anyone to update it. The frontend contains simple UI components to connect your wallet and interact with the contract (i.e. read & write the `message`). Try it out live on [inkathon.xyz](https://inkathon.xyz).
+Mysign.id is more than a tool; it's a vision to empower users with a digital signature solution that's as natural as pen on paper yet backed by the strongest blockchain security. It's about giving users control and confidence in their digital interactions and by integrating with Aleph Zero and Liminal, Mysign is setting a new standard for privacy, security, and convenience in digital signatures.
 
 ## Getting started 🚀
 
@@ -153,38 +128,9 @@ Adding custom scripts is useful to interact with your contracts or test certain 
 
 For general scripts, the same environment variable initialization & configuration applies as described below in the [Deployment](#deployment) section (e.g. to change the target network).
 
-## The Stack 🥞
-
-<details>
-<summary><strong>The Stack in Detail</strong></summary>
-
-- Monorepo Workspace with `contracts/` and `frontend/` directories as packages.
-- Package Manager: `pnpm` or `yarn@stable` (Read more in the [FAQs](#faqs--troubleshooting) section below)
-- Smart Contract Development: Rust, ink!, `cargo-contract`, `substrate-contracts-node`
-- Frontend: Next.js (app-dir), React, TypeScript
-  - Contract Interactions: `polkadot-js`, [`useInkathon`](https://github.com/scio-labs/use-inkathon) React Hooks & Utility Library (alternatively: [`useInk`](https://use.ink/frontend/getting-started))
-  - Styling: `shadcn/ui`, `tailwindcss`
-  - Linting & Formatting: `eslint`, `prettier`, `simple-git-hooks`, `lint-staged`
-
-<small>Styling, linting, and formatting libraries can be fully dropped or replaced with alternatives.</small>
-
-</details>
-
-![inkathon Stack Diagram](inkathon-stack-diagram.png)
-
-## Live Examples 🌐
-
-Below you find live examples that use this boilerplate or have a similar setup inspired by it:
-
-- [inkathon.xyz](https://inkathon.xyz) – Live demo deployment of this boilerplate
-- [AZERO.ID](https://azero.id) – Domain Name Service for Aleph Zero and beyond
-- Multiple hackathon projects from [ETHWarsaw](https://ethwarsaw-2023.devpost.com/submissions/), [HackOnChain](https://www.hackonchain.xyz/), [ETHDam](https://www.ethdam.com/), and the [Polkadot ink! Hackathon](https://www.encode.club/polkadot-ink-hackathon).
-
 ## Deployment 🚢
 
-Spinning up a deployment via Vercel is pretty straightforward as the necessary settings are already configured in `vercel.json`. If you haven't cloned the repository yet, you can also use the **Deploy** button below to create a new repository from this template.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fhello-world&env=NEXT_PUBLIC_DEFAULT_CHAIN&envDescription=Insert%20%60alephzero-testnet%60%20or%20%60shibuya%60&envLink=https%3A%2F%2Fgithub.com%2Fscio-labs%2Finkathon%23environment-variables&project-name=inkathon&repository-name=inkathon&redirect-url=https%3A%2F%2Fgithub.com%2Fscio-labs%2Finkathon&demo-url=https%3A%2F%2Finkathon.xyz)
+Spinning up a deployment via Vercel is pretty straightforward as the necessary settings are already configured in `vercel.json`. You can either use the Vercel CLI or the Vercel web interface to deploy the frontend.
 
 ### Environment Variables
 
@@ -237,82 +183,6 @@ ACCOUNT_URI=bottom drive obey lake curtain smoke basket hold race lonely fit wal
 ```
 
 When running the same script again, this deployer account defined there will be used to sign the extrinsic.
-
-> [!WARNING]  
-> These files are gitignored by default, but you should still be extra cautious when adding sensitive information to them.
-
-## VSCode Setup 🛠
-
-### Workspace
-
-It can be helpful to develop in VSCode by opening the workspace file `inkathon.code-workspace` instead of just the plain directory. This approach offers multiple advantages, like sections in the file explorer, or shortcut actions to open the terminal in the correct directory.
-
-Consider installin the [`zoma.vscode-auto-open-workspace`](https://marketplace.visualstudio.com/items?itemName=zoma.vscode-auto-open-workspace) extension to automatically open the workspace file when opening the directory.
-
-### Plugins
-
-Additionally, the VSCode plugins listed below are recommended as they can be very helpful when working with this boilerplate.
-
-<details>
-<summary><strong>All Recommended Plugins</strong></summary>
-
-| Plugin Name                                                                                                      | Description                                   |
-| ---------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| [`dbaeumer.vscode-eslint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)           | Adds ESLint editor support.                   |
-| [`esbenp.prettier-vscode`](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)           | Adds Prettier editor support.                 |
-| [`bradlc.vscode-tailwindcss`](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)     | Adds tailwindcss editor support.              |
-| [`rust-lang.rust-analyzer`](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)         | Adds Rust language support.                   |
-| [`ink-analyzer.ink-analyzer`](https://marketplace.visualstudio.com/items?itemName=ink-analyzer.ink-analyzer)     | Adds ink! language support.                   |
-| [`tamasfe.even-better-toml`](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)       | Adds `.toml` file support.                    |
-| [`gruntfuggly.todo-tree`](https://marketplace.visualstudio.com/items?itemName=gruntfuggly.todo-tree)             | Lists all `TODO` comments in your workspace.  |
-| [`wayou.vscode-todo-highlight`](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight) | Highlights `TODO` comments in your workspace. |
-| [`mikestead.dotenv`](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)                       | Adds syntax highlighting for `.env` files.    |
-
-</details>
-
-## FAQs & Troubleshooting 💬
-
-<details>
-<summary><strong>Which package managers are supported? Do I have to use pnpm?</strong></summary>
-
-For monorepo workspaces, [pnpm](https://pnpm.io) is likely the fastest and most reliable choice. When using it though, it's strongly recommended everyone on the team uses it. No installs should be performed nor any other lock files should be committed.
-
-As an alternative, [yarn](https://yarnpkg.com/) is also supported and can be used for installation. Caveats when using yarn:
-
-- Only the stable version of yarn (currently v3) is supported, not [yarn classic](https://classic.yarnpkg.com/) (v1).
-- `yarn.lock` files should be committed instead of `.pnpm-lock.yaml` files.
-- The `pnpm` CLI is still used in many `package.json` scripts, so these would have to be adjusted manually.
-
-> [!IMPORTANT]  
-> As [npm](https://www.npmjs.com/) lacks support for the `workspace` import protocol, it's not compatible with ink!athon.
-
-</details>
-
-<details>
-<summary><strong>How to solve `Cannot find module './greeter/development.ts'`?</strong></summary>
-
-Sometimes, Next.js doesn't pick up changes (i.e. file creations) in the `contracts/deployments/{contract}/` folders correctly. E.g., when you just deployed on a local node for the first time and set the frontend's `.env.local` to connect to the `development` network.
-
-To fix this, you can delete the build cache at `frontend/.next`. This is currently the only solution and will force Next.js to rebuild the project and pick up the new files.
-
-> [!NOTE]  
-> To prevent this behavior, the `contracts/package.json` file contains a small `postinstall` script that creates an empty `development.ts` file if none exists.
-
-</details>
-
-<details>
-<summary><strong>How to approach styling?</strong></summary>
-
-Currently it offers styling via the following options out of the box:
-
-- [shadcn/ui](https://ui.shadcn.com/) - Re-usable components built using [Radix UI](https://radix-ui.com/) and [Tailwind CSS](https://tailwindcss.com/).
-- Vanilla [Tailwind CSS](https://tailwindcss.com/) styled styles via `className` and `*.module.(s)css` files.
-- Default (S)CSS styles.
-
-> [!INFO]  
-> This boilerplate tries to stay as un-opinonated in regards to styling, which means you can use any styling or component library.
-
-</details>
 
 <details>
 <summary><strong>Resources to learn more about Substrate, ink!, and polkadot.js</strong></summary>
