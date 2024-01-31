@@ -1,4 +1,4 @@
-## Mysign.id - A new era of digital signatures, secured, verified, and uniquely yours
+# Mysign.id - A new era of digital signatures, secured, verified, and uniquely yours
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
@@ -8,7 +8,7 @@ Mysign.id is an AI and ZKP based platform transforming the way we use digital si
 
 - **Signature Minting** - Each signature is securely minted as a unique NFT, ensuring that your signature is only accessible to you.
 - **Metadata** - Everytime you mint a signature, mysign.id will extract and store your unique signature metadata, like the shape and edges of your signature on the blockchain to provide you with a secure signature profile.
-- **Built on Aleph Zero** - Utilizing Aleph Zero and Liminal's privacy layer, Mysign.id ensures fast, private, and secure transactions.
+- **Built on Aleph Zero** - Utilizing Aleph Zero and Liminal's privacy layer, Mysign.id ensures fast, private, and secure transactions. Liminal's zero-knowledge proofs allow you to verify the authenticity of your signature without having to share it with third parties.
 - **Signature Verification** - Mysign leverages zero-knowledge proofs for signature verification. Upload an image of a signature and verify its authenticity associated with a user's address or Aleph Zero ID. (Coming Soon, built on Aleph Zero Liminal)
 - **Integration with existing platforms** - Mysign.id can be integrated with existing platforms like Docusign, allowing you to sign documents with your real signature from any device using your wallet. (Coming Soon, mysign.id SDK)
 
