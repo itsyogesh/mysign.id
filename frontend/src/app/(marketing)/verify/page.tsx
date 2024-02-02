@@ -2,7 +2,7 @@ export default async function Verify() {
   return (
     <>
       <section className="pt-16 lg:py-32">
-        <div className="container flex max-w-[64rem] flex-col items-center gap-10 text-center sm:gap-6">
+        <div className="container flex max-w-[52rem] flex-col items-center gap-10 text-center sm:gap-6">
           <h1
             className="animate-fade-up text-balance font-heading text-4xl font-bold tracking-tight opacity-0 sm:text-5xl md:text-6xl lg:text-7xl"
             style={{ animationDelay: '0.25s', animationFillMode: 'forwards' }}

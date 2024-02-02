@@ -3,7 +3,11 @@
 import Image from 'next/image'
 import { FC } from 'react'
 
-import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider'
+import {
+  ReactCompareSlider,
+  ReactCompareSliderImage,
+  ReactCompareSliderHandle,
+} from 'react-compare-slider'
 
 export interface CompareSliderProps {
   className?: string
@@ -12,6 +16,14 @@ export interface CompareSliderProps {
 export const CompareSlider: FC<CompareSliderProps> = ({ className, ...rest }) => (
   <ReactCompareSlider
     className={className}
+    handle={
+      <ReactCompareSliderHandle
+        buttonStyle={{
+          width: '48px',
+          height: '48px',
+        }}
+      />
+    }
     boundsPadding={10}
     itemOne={<ReactCompareSliderImage src="/images/mysign-before.jpeg" alt="before" />}
     itemTwo={
@@ -19,6 +31,6 @@ export const CompareSlider: FC<CompareSliderProps> = ({ className, ...rest }) =>
     }
     {...rest}
     keyboardIncrement="5%"
-    position={50}
+    position={60}
   />
 )
