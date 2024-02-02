@@ -12,7 +12,7 @@ import { CompareSlider } from '../components/compare-slider'
 export default function IndexPage() {
   return (
     <>
-      <section className="pt-16 lg:py-32">
+      <section className="pt-16 lg:py-24">
         <div className="container flex max-w-[64rem] flex-col items-center gap-10 text-center sm:gap-6">
           <Link
             href="https://twitter.com/itsyogesh18"
@@ -34,7 +34,7 @@ export default function IndexPage() {
           </h1>
 
           <p
-            className="max-w-[42rem] animate-fade-up text-balance pb-6 leading-normal text-muted-foreground opacity-0 sm:pb-2 sm:text-xl sm:leading-8"
+            className="max-w-[42rem] animate-fade-up text-balance pb-0 leading-normal text-muted-foreground opacity-0 sm:text-xl sm:leading-8 md:pb-6"
             style={{ animationDelay: '0.35s', animationFillMode: 'forwards' }}
           >
             A new era of digital signatures - secure, verified, and uniquely yours. Sign anywhere
@@ -43,7 +43,7 @@ export default function IndexPage() {
           </p>
 
           <div
-            className="flex animate-fade-up justify-center space-x-4 opacity-0 md:space-x-4 md:py-2"
+            className="flex animate-fade-up justify-center space-x-4 py-1 opacity-0 md:space-x-4"
             style={{ animationDelay: '0.45s', animationFillMode: 'forwards' }}
           >
             <BackgroundGradient className="rounded-[22px] bg-white p-1.5 sm:p-1.5">
