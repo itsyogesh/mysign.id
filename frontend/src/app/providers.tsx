@@ -9,11 +9,11 @@ import { ThemeProviderProps } from 'next-themes/dist/types'
 
 import { env } from '@/config/environment'
 
-export function ClientProviders({ children }: PropsWithChildren) {
+export function InkathonProvider({ children }: PropsWithChildren) {
   return (
     <UseInkathonProvider
       appName="mysign.id"
-      connectOnInit={true}
+      connectOnInit={false}
       defaultChain={env.defaultChain}
       deployments={getDeployments()}
     >

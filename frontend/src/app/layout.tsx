@@ -13,7 +13,7 @@ import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
 
 import './globals.css'
-import { ClientProviders, ThemeProvider } from './providers'
+import { InkathonProvider, ThemeProvider } from './providers'
 
 export const viewport: Viewport = {
   themeColor: '#000000',
@@ -73,10 +73,10 @@ export default function RootLayout({ children }: PropsWithChildren) {
           enableSystem
           disableTransitionOnChange
         >
-          <ClientProviders>
+          <InkathonProvider>
             <TooltipProvider>{children}</TooltipProvider>
             <ToastConfig />
-          </ClientProviders>
+          </InkathonProvider>
 
           {!!env.isProduction && <Analytics />}
         </ThemeProvider>
