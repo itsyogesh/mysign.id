@@ -1,7 +1,9 @@
 export default async function Verify() {
   return (
     <>
-      <section className="pt-16 lg:py-32">
+      <section className="border-b px-4 pb-12 pt-16 bg-grid-small-black/[0.2] dark:bg-grid-small-white/[0.2] sm:px-6 lg:px-8 lg:py-24">
+        {/* Radial gradient for the container to give a faded look */}
+        <div className="absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
         <div className="container flex max-w-[64rem] flex-col items-center gap-10 text-center sm:gap-6">
           <h1
             className="max-w-[52rem] animate-fade-up text-balance font-heading text-4xl font-bold tracking-tight opacity-0 sm:text-5xl md:text-6xl lg:text-7xl"
