@@ -12,7 +12,9 @@ import { CompareSlider } from '../components/compare-slider'
 export default function IndexPage() {
   return (
     <>
-      <section className="pt-16 lg:py-24">
+      <section className="border-b px-4 pb-12 pt-16 bg-grid-small-black/[0.2] dark:bg-grid-small-white/[0.2] sm:px-6 lg:px-8 lg:py-24">
+        {/* Radial gradient for the container to give a faded look */}
+        <div className="absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
         <div className="container flex max-w-[64rem] flex-col items-center gap-10 text-center sm:gap-6">
           <Link
             href="https://twitter.com/itsyogesh18"
